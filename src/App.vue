@@ -17,6 +17,14 @@ export default {
 </script>
 
 <style lang="scss">
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     padding: 0px;
     margin: 0 auto;

@@ -1,14 +1,16 @@
 <template>
 <nav class="sidebar">
   <SidebarTitle />
-  </nav>
+  <SearchBar />
+</nav>
 </template>
 
 <script>
 import SidebarTitle from "./SidebarTitle.vue";
+import SearchBar from "./SearchBar.vue";
 export default {
   name: "Sidebar",
-  components: { SidebarTitle },
+  components: { SidebarTitle, SearchBar },
 }
 </script>
 <style lang="scss">
