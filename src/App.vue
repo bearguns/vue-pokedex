@@ -1,20 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/pokemon/1">Pokemon</router-link>
-    </div>
+    <Sidebar />
     <router-view />
   </div>
 </template>
 
+<script>
+import Sidebar from "./components/sidebar/Sidebar.vue";
+export default {
+  name: "App",
+  components: { Sidebar },
+  created() {
+    this.$store.dispatch("fetchPokedex");
+  }
+};
+</script>
+
 <style lang="scss">
+body {
+    padding: 0px;
+    margin: 0 auto;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  @media screen and (max-width: 812px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
 }
 
 #nav {

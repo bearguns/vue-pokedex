@@ -40,12 +40,20 @@ export const mutations = {
 };
 
 export const actions = {
+  async fetchPokedex({ commit }) {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
+    );
+    const { pokemon } = await response.json();
+    commit("setMasterPokedex", pokemon);
+    return commit("setActivePokedex", pokemon);
+  },
   searchPokedex({ commit, state }, query = "") {
     if (!query) {
       return commit("setActivePokedex", state.masterPokedex);
     }
 
-    const fuse = new Fuse(masterPokedex, {
+    const fuse = new Fuse(state.masterPokedex, {
       shouldSort: true,
       threshold: 0,
       location: 0,
