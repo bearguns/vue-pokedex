@@ -21,3 +21,70 @@ $poison: #974998;
 $psychic: #e9437b;
 $rock: #9f883e;
 $water: #3395f7;
+
+.text-is-color {
+    &--white {
+	color: $white;
+    }
+    &--black {
+	color: $black;
+    }
+     &--bug {
+	color: $bug;
+    }
+
+    &--dragon {
+	color: $dragon;
+    }
+
+    &--electric {
+	color: $electric;
+    }
+
+    &--fighting {
+	color: $fighting;
+    }
+
+    &--fire {
+	color: $fire;
+    }
+
+    &--flying {
+	color: $flying;
+    }
+
+    &--grass {
+	color: $grass;
+    }
+    &--ghost {
+	color: $ghost;
+    }
+
+    &--ground {
+	color: $ground;
+    }
+
+    &--ice {
+	color: $ice;
+    }
+
+    &--normal {
+	color: $normal;
+    }
+
+    &--poison {
+	color: $poison;
+    }
+
+    &--psychic {
+	color: $psychic;
+    }
+
+    &--rock {
+	color: $rock;
+    }
+
+    &--water {
+	color: $water;
+    }
+}
