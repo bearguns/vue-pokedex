@@ -18,19 +18,22 @@ export default {
 
 <style lang="scss">
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    padding: 0px;
-    margin: 0 auto;
+  padding: 0px;
+  margin: 0 auto;
 }
 
 #app {
+  background: $light-gray;
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

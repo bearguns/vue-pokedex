@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <PKView>
+    <Pokedex />
+  </PKView>
 </template>
+
+<script>
+import PKView from "../components/common/View.vue";
+import Pokedex from "../components/pokedex/Pokedex.vue";
+export default {
+  name: "PokedexView",
+  components: { Pokedex, PKView }
+};
+</script>

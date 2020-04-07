@@ -1,12 +1,12 @@
 <template>
   <div class="filter">
-    <slot></slot>
     <PokemonType
       v-for="(type, key) in pokemonTypes"
       :key="key"
       @clickedType="handleClick(type)"
       :pokemonType="type"
       :toggle="true"
+      :active="filterList.includes(type)"
     />
   </div>
 </template>
@@ -17,15 +17,28 @@ import PokemonType from "../common/PokemonType.vue";
 export default {
   name: "FilterList",
   components: { PokemonType },
+  props: {
+    filterType: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       pokemonTypes: { ...POKEMON_TYPES }
     };
   },
+  computed: {
+    filterList() {
+      return this.filterType === "type"
+	? this.$store.state.typeFilters
+	: this.$store.state.weaknessFilters;
+    }
+  },
   methods: {
     handleClick(type) {
       return this.$store.dispatch("filterPokedex", {
-	filterType: "type",
+	filterType: this.filterType,
 	pokemonType: type
       });
     }
@@ -37,11 +50,10 @@ export default {
 .filter {
   margin: 0 auto;
   margin-top: 27px;
-  background: $light-gray;
   border-radius: 18px;
   height: 280px;
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

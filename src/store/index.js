@@ -121,5 +121,6 @@ export const getters = {
 export default new Vuex.Store({
   state: { ...defaultState },
   mutations,
-  actions
+  actions,
+  getters
 });

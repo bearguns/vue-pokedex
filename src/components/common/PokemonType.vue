@@ -1,7 +1,7 @@
 <template>
   <font-awesome-icon
     :icon="icon"
-    :class="['pokemon-type', color, isActive ? 'pokemon-type--active' : '']"
+    :class="['pokemon-type', color, active ? 'pokemon-type--active' : '']"
     @click="handleClick"
     :style="{ cursor: toggle ? 'pointer' : 'none' }"
   ></font-awesome-icon>
@@ -20,20 +20,16 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    active: {
+      type: Boolean,
+      required: true,
+      default: false
     }
-  },
-  data() {
-    return {
-      isActive: this.toggle ? false : true
-    };
   },
   methods: {
     handleClick() {
-      if (this.toggle) {
-	this.isActive = !this.isActive;
-	return this.$emit("clickedType");
-      }
-      return undefined;
+      return this.$emit("clickedType");
     }
   },
   computed: {
