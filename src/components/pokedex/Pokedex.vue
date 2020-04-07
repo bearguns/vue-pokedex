@@ -1,7 +1,11 @@
 <template>
   <div class="pokedex">
     <PKCard v-for="pokemon in filteredPokedex" :key="pokemon.id">
-      <template #banner>#{{ pokemon.num }} - {{ pokemon.name }}</template>
+      <template #banner
+	><PKHeading :level="4"
+	  >#{{ pokemon.num }} - {{ pokemon.name }}</PKHeading
+	></template
+      >
       <template #content>
 	<img alt="" :src="pokemon.img" />
       </template>
@@ -12,9 +16,10 @@
 <script>
 import { mapGetters } from "vuex";
 import PKCard from "../common/PKCard.vue";
+import PKHeading from "../common/PKHeading.vue";
 export default {
   name: "Pokedex",
-  components: { PKCard },
+  components: { PKCard, PKHeading },
   computed: {
     ...mapGetters(["filteredPokedex"])
   }

@@ -41,10 +41,10 @@ export default {
     right: 0;
     width: 100%;
     border-radius: 8px 8px 0px 0px;
-    height: 3.6rem;
+    height: 48px;
     display: flex;
     justify-content: space-between;
-    padding: 0px 12px;
+    padding: 8px;
     background: $red;
     color: $light-gray;
   }

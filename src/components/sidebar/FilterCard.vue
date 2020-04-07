@@ -1,7 +1,7 @@
 <template>
   <PKCard>
     <template #banner>
-      <h2>Filter by {{ filterType }}</h2>
+      <PKHeading :level="4"> Filter by {{ filterType }} </PKHeading>
     </template>
     <template #content>
       <FilterList :filterType="filterType" />
@@ -18,10 +18,11 @@
 import { mapMutations } from "vuex";
 import PKButton from "../common/PKButton.vue";
 import PKCard from "../common/PKCard.vue";
+import PKHeading from "../common/PKHeading.vue";
 import FilterList from "./FilterList.vue";
 export default {
   name: "FilterCard",
-  components: { PKButton, PKCard, FilterList },
+  components: { PKButton, PKCard, PKHeading, FilterList },
   props: {
     filterType: String
   },
